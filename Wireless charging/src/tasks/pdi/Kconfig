@@ -1,0 +1,28 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2011
+#
+
+choice 'autoliv pdi type selection'	" \
+	SDM10_11	CONFIG_PDI_SDM10 \
+	DM_DMA		CONFIG_PDI_DM \
+	RC_N7		CONFIG_PDI_RC \
+	B515		CONFIG_PDI_B515 \
+	J04N		CONFIG_PDI_J04N \
+	SDM30		CONFIG_PDI_SDM30 \
+	M16			CONFIG_PDI_M16 \
+	RP			CONFIG_PDI_RP \
+	AP2 		CONFIG_PDI_AP2\
+	CMF1		CONFIG_PDI_CMF1 \
+	BA			CONFIG_PDI_BA \
+	BA_NEW		CONFIG_PDI_BANEW \
+	CCP2		CONFIG_PDI_CCP2 \
+	B12L		CONFIG_PDI_B12L \
+	B562		CONFIG_PDI_B562 \
+	B515RSU		CONFIG_PDI_B515RSU \
+	RCLE		CONFIG_PDI_RCLE \
+    CHB041		CONFIG_PDI_CHB041 \
+    HZH		    CONFIG_PDI_HZH \
+    TL_NEW      CONFIG_PDI_TL_NEW \
+" TL_NEW

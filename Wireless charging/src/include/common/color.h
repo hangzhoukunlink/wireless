@@ -1,0 +1,24 @@
+/*
+ * 	miaofng@2010 initial version
+ *
+ */
+#ifndef __COLOR_H_
+#define __COLOR_H_
+
+#include "config.h"
+
+#define RGB565(r, g, b)	((r >> 3) | ((g >> 2) << 5) | ((b >> 3) << 11))
+#define RGB RGB565
+
+#define WHITE RGB(0xff, 0xff, 0xff)
+#define BLACK RGB(0x00, 0x00, 0x00)
+#define RED RGB(0xff, 0x00, 0x00)
+#define GREEN RGB(0x00, 0xff, 0x00)
+#define BLUE RGB(0x00, 0x00, 0xff)
+#define YELLOW RGB(0xff, 0xff, 0x00)
+#define PURPLE RGB(0xff, 0x00, 0xff)
+#define CYAN RGB(0x00, 0xff, 0xff)
+#define DARK RGB(0x80, 0x80, 0x80)
+#define GRAY RGB(0xc0, 0xc0, 0xc0)
+
+#endif /*__COLOR_H_*/

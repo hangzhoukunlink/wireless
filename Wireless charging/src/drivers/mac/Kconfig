@@ -1,0 +1,23 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2010
+#
+
+bool "general mac drivers?" CONFIG_DRIVER_MAC
+if [ "$CONFIG_DRIVER_MAC" = "y" ]; then
+	choice 'mac chip select'	" \
+		STM32			CONFIG_MAC_STM32 \
+		LM3S			CONFIG_MAC_LM3S \
+		ENC424J600(100M)	CONFIG_MAC_ENC424J600 \
+		ENC28J60(10M)		CONFIG_MAC_ENC28J60 \
+		LPC178X			CONFIG_MAC_LPC178X \
+	" STM32
+	choice 'phy chip select'	" \
+		NONE			CONFIG_PHYLAN_NONE \
+		DP83848C		CONFIG_PHY_DP83848C \
+		LAN8720			CONFIG_PHY_LAN8720 \
+		KS8721B			CONFIG_PHY_KS8721B \
+		DM9161A			CONFIG_PHY_DM9161A \
+	" NONE
+fi

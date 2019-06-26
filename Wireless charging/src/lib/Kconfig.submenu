@@ -1,0 +1,100 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2010
+#
+if [ "$CONFIG_TOOLCHAIN_IAR" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'iar'
+		source src/lib/iar/Kconfig
+	endmenu
+fi
+
+mainmenu_option next_comment
+	comment 'sys'
+	source src/lib/sys/Kconfig
+endmenu
+
+if [ "$CONFIG_TASK_SHELL" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'shell'
+		source src/lib/shell/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_TASK_OSD" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'osd'
+		source src/lib/osd/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_TASK_GUI" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'gui'
+		source src/lib/gui/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_LWIP" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'lwip'
+		source src/lib/lwip/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_FATFS" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'fatfs'
+		source src/lib/fatfs/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_COMMON" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'common'
+		source src/lib/common/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_PRIV" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'priv'
+		source src/lib/priv/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_UDISK" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'mass storage'
+		source src/lib/mass_storage/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_LUA" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'lua script language'
+		source src/lib/lua/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_ZBAR" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'zbar scanner library'
+		source src/lib/zbar/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_INSTR" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'instr'
+		source src/lib/instr/Kconfig
+	endmenu
+fi
+
+if [ "$CONFIG_LIB_PMSM" = "y" ]; then
+	mainmenu_option next_comment
+		comment 'pmsm'
+		source src/lib/pmsm/Kconfig
+	endmenu
+fi

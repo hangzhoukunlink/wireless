@@ -1,0 +1,125 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2010
+#
+
+choice 'default console select'	" \
+	UARTg	CONFIG_CONSOLE_UARTg \
+	UART0	CONFIG_CONSOLE_UART0 \
+	UART1	CONFIG_CONSOLE_UART1 \
+	UART2	CONFIG_CONSOLE_UART2 \
+" UART2
+int 'console baudrate' CONFIG_CONSOLE_BAUD 115200
+bool 'rtc driver' CONFIG_DRIVER_RTC
+
+mainmenu_option next_comment
+	comment 'uart config'
+	source src/drivers/uart/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'lpt config'
+	source src/drivers/lpt/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'spi config'
+	source src/drivers/spi/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'i2c config'
+	source src/drivers/i2c/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'can config'
+	source src/drivers/can/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'lin config'
+	source src/drivers/lin/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'usb config'
+	source src/drivers/usb/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'mac config'
+	source src/drivers/mac/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'lcd config'
+	source src/drivers/lcd/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'pd config'
+	source src/drivers/pd/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'key config'
+	source src/drivers/key/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'pwm config'
+	source src/drivers/pwm/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'pwmin config'
+	source src/drivers/pwmin/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'pulse counter config'
+	source src/drivers/counter/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'disk config'
+	source src/drivers/disk/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'misc config'
+	source src/drivers/Kconfig.misc
+endmenu
+
+mainmenu_option next_comment
+	comment 'flash config'
+	source src/drivers/flash/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'wireless config'
+	source src/drivers/wl/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'video config'
+	source src/drivers/video/Kconfig
+endmenu
+
+
+mainmenu_option next_comment
+	comment 'wdt config'
+	source src/drivers/wdt/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'dac config'
+	source src/drivers/dac/Kconfig
+endmenu
+
+mainmenu_option next_comment
+	comment 'pmsmd config'
+	source src/drivers/pmsmd/Kconfig
+endmenu

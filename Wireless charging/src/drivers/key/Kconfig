@@ -1,0 +1,37 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2010
+#
+bool "general key driver" CONFIG_DRIVER_KEYBOARD
+if [ "$CONFIG_DRIVER_KEYBOARD" = "y" ]; then
+	bool "adc key driver" CONFIG_DRIVER_ADCKEY
+	if [ "$CONFIG_DRIVER_ADCKEY" = "y" ]; then
+		choice 'STM32 ADC Channel select'	" \
+			ADC12_IN0 CONFIG_ADCKEY_ADC12_IN0 \
+			ADC12_IN8 CONFIG_ADCKEY_ADC12_IN8 \
+		" ADC12_IN0
+	fi
+	bool "gpio key driver" CONFIG_DRIVER_GPIOKEY
+	if [ "$CONFIG_DRIVER_GPIOKEY" = "y" ]; then
+		choice 'keyboard layout select'	" \
+			goldbull	CONFIG_GPIOKEY_LAYOUT_GB \
+			vvt		CONFIG_GPIOKEY_LAYOUT_VVT \
+			custom		CONFIG_GPIOKEY_LAYOUT_CUSTOM \
+		" custom
+	fi
+	bool "general remote control driver" CONFIG_DRIVER_RCKEY
+	if [ "$CONFIG_DRIVER_RCKEY" = "y" ]; then
+		choice 'remote control protocol'	" \
+			rc5	CONFIG_RCKEY_PROTOCOL_RC5 \
+			ppm	CONFIG_RCKEY_PROTOCOL_PPM \
+		" rc5
+	fi
+	bool "general encoder driver" CONFIG_DRIVER_ENCODER
+	if [ "$CONFIG_DRIVER_ENCODER" = "y" ]; then
+		mainmenu_option next_comment
+		comment 'encoder config'
+		source src/drivers/key/encoder/Kconfig
+		endmenu
+	fi
+fi

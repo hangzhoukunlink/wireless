@@ -1,0 +1,8 @@
+#
+# Written by king@2012
+#
+
+choice 'repeater board select'	" \
+	LPC178X_DK	CONFIG_YREP_BOARD_DK \
+	V1.0		CONFIG_YREP_V1P0 \
+" LPC178X_DK

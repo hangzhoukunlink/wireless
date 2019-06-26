@@ -1,0 +1,15 @@
+obj-$(CONFIG_TASK_MOTOR) += bldc/
+obj-$(CONFIG_TASK_VVT) += vvt/
+obj-$(CONFIG_TASK_STEPMOTOR) += sm/
+obj-$(CONFIG_TASK_MATRIX) += matrix/
+obj-$(CONFIG_TASK_HVP) += hvp/
+obj-$(CONFIG_TASK_NEST) += nest/
+obj-$(CONFIG_TASK_MISC) += misc/
+obj-$(CONFIG_TASK_APT) += apt/
+obj-$(CONFIG_TASK_SSS) += sss/
+obj-$(CONFIG_TASK_PDI) += pdi/
+obj-$(CONFIG_TASK_YBS) += ybs/
+obj-$(CONFIG_TASK_YBSREPEATER) += ybs_repeater/
+obj-$(CONFIG_TASK_SIMULATOR) += simulator/
+obj-$(CONFIG_TASK_OID) += oid/
+obj-$(CONFIG_TASK_IRT) += irt/

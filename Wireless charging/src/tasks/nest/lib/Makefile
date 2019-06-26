@@ -1,0 +1,11 @@
+obj-y += cncb.o
+obj-y += nest_core.o
+obj-y += nest_time.o
+obj-y += nest_can.o
+obj-y += nest_light.o
+obj-y += nest_message.o
+obj-y += nest_power.o
+obj-y += nest_error.o
+obj-y += nest_chip.o
+obj-$(CONFIG_NEST_BURN) += nest_burn.o
+obj-y += nest_wl.o

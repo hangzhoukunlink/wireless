@@ -1,0 +1,34 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2010
+#
+bool "general lcd support?" CONFIG_DRIVER_LCD
+
+if [ "$CONFIG_DRIVER_LCD" = "y" ]; then
+choice 'lcd select'	" \
+	LCD1602	CONFIG_LCD_1602 \
+	JHD204A	CONFIG_LCD_JHD204A \
+	CUSTOM	CONFIG_CUSTOM_DISPLAY\
+	ILI932X	CONFIG_LCD_ILI932X \
+	S6B33C	CONFIG_LCD_S6B33 \
+	WX1800F	CONFIG_LCD_ILI9161 \
+	KLD24A23/TM024HBZ13 CONFIG_LCD_ILI932X \
+	TFT8K0940/TC320 CONFIG_LCD_SSD1289 \
+" LCD1602
+
+choice 'lcd rotation degree select'	" \
+	CW000	CONFIG_LCD_ROT_000 \
+	CW090	CONFIG_LCD_ROT_090 \
+	CW180	CONFIG_LCD_ROT_180 \
+	CW270	CONFIG_LCD_ROT_270 \
+" CW000
+
+choice 'lcd fontlib select'	" \
+	TNR08X16	CONFIG_FONT_TNR08X16 \
+	TNR16X32	CONFIG_FONT_TNR16X32 \
+" TNR16X32
+
+bool "shell cmd for lcd debug" CONFIG_LCD_CMD
+fi
+

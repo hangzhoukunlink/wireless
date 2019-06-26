@@ -1,0 +1,7 @@
+#
+# bldc configuration written in linux configuration language
+#
+# Written by miaofng@2010
+#
+
+bool "enable motor debug?" CONFIG_MOTOR_DEBUG
